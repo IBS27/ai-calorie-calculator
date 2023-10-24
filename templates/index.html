@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MealCube</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.3/dist/semantic.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.3/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <h1>MealCube</h1>
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+        <div id="input" class="ui file input">
+        <input
+        class="file"
+          type="file"
+          name="file"
+          accept=".png, .jpg, .jpeg, .gif"
+          required
+        />
+        <colspan="2">
+        <input id="analyze" class="ui primary button" type="submit" value="Upload and Analyze" />
+        </div>
+      </form>
+
+      <div id="info" class="ui grid">
+        <div class="eight wide column">
+      <h3 id="header" class="ui block header">
+        Nutritional Information (per 100 grams)
+      </h3>
+      <div class="ui list">
+        <div class="item">Calories: {{ calories }} </div>
+        <div class="ui divider"></div>
+        <div class="item">Serving Size(g): {{ serving_size }} </div>
+        <div class="ui divider"></div>
+        <div class="item">Total Fat(g): {{ total_fat}} </div>
+        <div class="ui divider"></div>
+        <div class="item">Saturated Fat(g): {{ sat_fat }} </div>
+        <div class="ui divider"></div>
+        <div class="item">Protein(g): {{ protein }} </div>
+        <div class="ui divider"></div>
+        <div class="item">Sodium(mg): {{ sodium }} </div>
+        <div class="ui divider"></div>
+        <div class="item">Potassium(mg): {{ potassium }} </div>
+        <div class="ui divider"></div>
+        <div class="item">Cholesterol(mg): {{ cholesterol }} </div>
+        <div class="ui divider"></div>
+        <div class="item">Carbohydrates(g): {{ carbs }} </div>
+        <div class="ui divider"></div>
+        <div class="item">Fiber(g): {{ fiber }} </div>
+        <div class="ui divider"></div>
+        <div class="item">Sugar(g): {{ sugar }} </div>
+      </div>
+      </div>
+      <div id="image" class="eight wide column">
+        {% if image_url %}
+        <img class="ui fluid image" src="/static/{{ image_url }}" />
+        <div id="name" class="ui big text"><i class="grin hearts outline icon" style="visibility: visible;"></i>{{ food }}</div>
+        {% endif %}
+      </div>
+</div>
+  </body>
+</html>

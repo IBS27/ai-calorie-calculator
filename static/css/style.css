@@ -1,0 +1,51 @@
+body {
+    padding: 200px;
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    font-size: 50pt;
+    color: #F2711C;
+}
+
+.item {
+    vertical-align:middle;
+    font-size: large;
+    color: white;
+}
+
+#info {
+    padding-top: 25px;
+}
+
+#name {
+    padding-top: 10px;
+    font-size: x-large;
+    color: #F2711C;
+}
+
+#header {
+    background-color: #F2711C;
+    border-color: black;
+}
+
+#analyze {
+    background-color: #F2711C;
+    color: black;
+    block-size: 35px;
+}
+
+#input {
+    block-size: 35px;
+}
+
+.file {
+    block-size: 35px;
+    vertical-align: middle;
+}
+
+.divider {
+    background-color: grey;
+}
